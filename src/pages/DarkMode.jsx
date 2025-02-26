@@ -1,3 +1,4 @@
+import Gallery from "../components/Gallery";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
@@ -61,21 +62,10 @@ export function DarkMode() {
                 <Navbar />
               </div>
 
-              <div className="w-[1000px] h-[700px] bg-[#2D2D2D] rounded-lg flex items-center justify-center mr-30">
-                <div className="w-[800px]">
-                  <div className="grid grid-cols-2 gap-8 p-10">
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto I</span>
-                    </div>
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto II</span>
-                    </div>
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto III</span>
-                    </div>
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto IV</span>
-                    </div>
+              <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
+                <div className="w-full">
+                  <div className=" gap-8">
+                    <Gallery/>
                   </div>
                 </div>
               </div>
