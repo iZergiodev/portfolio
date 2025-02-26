@@ -1,19 +1,15 @@
-
+import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
-
-
 
 export function LightMode() {
   const { language, theme, changeTheme, changeLanguage } = useStore();
 
-  const handleTheme = () => {
-    changeTheme();
-  }
+
 
   return (
     <>
-      <div className="w-screen h-screen bg-amber-50">
+      <div className="w-screen h-screen bg-amber-100">
         <Particles
           particleColors={["#8B00FF", "#00CED1"]}
           particleCount={1000}
@@ -64,12 +60,7 @@ export function LightMode() {
 
             <div className="w-1/2 h-full flex flex-col justify-center items-center relative">
               <div className="absolute top-4 right-4 flex gap-2">
-                <button className="w-35 px-4 py-2 bg-[#8B00FF] text-[#FFFFFF] rounded hover:bg-[#A033FF] cursor-pointer shadow-lg">
-                  Idioma
-                </button>
-                <button onClick={handleTheme} className="w-35 px-4 py-2 bg-[#00CED1] text-[#FFFFFF] rounded hover:bg-[#33E0E3] cursor-pointer shadow-lg">
-                  Tema
-                </button>
+                <Navbar />
               </div>
 
               <div className="w-3/4 h-3/4 bg-[#2D2D2D] rounded-lg flex items-center justify-center">
@@ -97,4 +88,3 @@ export function LightMode() {
     </>
   );
 }
-

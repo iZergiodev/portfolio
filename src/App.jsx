@@ -11,10 +11,8 @@ function App() {
 
   return (
     <>
-      
-      {
-        theme ? <LightMode/> : <DarkMode/>
-      }
+
+      {theme ? <LightMode /> : <DarkMode />}
 
     </>
   );
