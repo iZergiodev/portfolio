@@ -8,18 +8,21 @@ export const Navbar = () => {
     <nav className="flex justify-end mr-5">
       <div className="flex gap-3 mr-10">
         <img
+          onClick={() => changeLanguage("spanish")}
           src="spanish.svg"
           alt="bandera españa"
           width={30}
           className="hover:cursor-pointer"
         />
         <img
+          onClick={() => changeLanguage("portuguese")}
           src="portugues.svg"
           alt="bandera portugal"
           width={30}
           className="hover:cursor-pointer"
         />
         <img
+          onClick={() => changeLanguage("english")}
           src="english.svg"
           alt="bandera inglaterra"
           width={30}
