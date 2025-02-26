@@ -1,4 +1,5 @@
 import Gallery from "../components/Gallery";
+import MainCard from "../components/MainCard";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
@@ -22,22 +23,7 @@ export function DarkMode() {
         >
           <div className="w-full h-full flex">
             <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6">
-              <div className="w-[670px] flex flex-col justify-center items-center bg-[#2D2D2D] rounded-lg overflow-hidden shadow-lg gap-2">
-                <div className="w-[350px] h-[350px] mt-3 shadow-lg">
-                  <img
-                    src="/teste.jpg"
-                    alt="Foto de exemplo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="bg-[#00CED1] p-4 h-[200px] m-3 rounded-2xl">
-                  <p className="text-md text-gray-500">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
+              <MainCard/>
 
               <div className="w-[480px]">
                 <div className="grid grid-cols-2 gap-8">
