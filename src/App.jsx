@@ -1,7 +1,10 @@
 import Particles from "./components/Particles";
 import "./App.css";
+import { useStore } from "./store/store";
 
 function App() {
+  const { language, theme, changeTheme, changeLanguage } = useStore();
+
   return (
     <>
       <div className="w-screen h-screen bg-black">
