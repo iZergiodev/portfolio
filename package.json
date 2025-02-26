@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.5",
     "@tailwindcss/vite": "^4.0.8",
     "framer-motion": "^12.4.7",
     "ogl": "^1.0.11",
