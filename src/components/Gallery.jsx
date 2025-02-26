@@ -1,14 +1,12 @@
-import {
-  Card,
-  CardHeader,
-  CardFooter,
-  Image,
-  Button,
-} from "@heroui/react";
+import { Card, CardHeader, CardFooter, Image, Button } from "@heroui/react";
 
 export default function Gallery() {
   const handlePress = () => {
-    window.open("https://front-flash4-devs.vercel.app/", "_blank", "noopener,noreferrer");
+    window.open(
+      "https://front-flash4-devs.vercel.app/",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
   return (
     <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
@@ -17,9 +15,7 @@ export default function Gallery() {
           <p className="text-tiny text-white/60 uppercase font-bold">
             Comming Soon
           </p>
-          <h4 className="text-white font-medium text-large">
-          Comming Soon
-          </h4>
+          <h4 className="text-white font-medium text-large">Comming Soon</h4>
         </CardHeader>
         <Image
           removeWrapper
@@ -31,11 +27,9 @@ export default function Gallery() {
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
-          Comming Soon
+            Comming Soon
           </p>
-          <h4 className="text-white font-medium text-large">
-          Comming Soon
-          </h4>
+          <h4 className="text-white font-medium text-large">Comming Soon</h4>
         </CardHeader>
         <Image
           removeWrapper
@@ -47,11 +41,9 @@ export default function Gallery() {
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
-          Comming Soon
+            Comming Soon
           </p>
-          <h4 className="text-white font-medium text-large">
-          Comming Soon
-          </h4>
+          <h4 className="text-white font-medium text-large">Comming Soon</h4>
         </CardHeader>
         <Image
           removeWrapper
@@ -65,7 +57,9 @@ export default function Gallery() {
         className="w-full h-[300px] col-span-12 sm:col-span-5"
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">Comming Soon</p>
+          <p className="text-tiny text-white/60 uppercase font-bold">
+            Comming Soon
+          </p>
           <h4 className="text-black font-medium text-2xl">Comming Soon</h4>
         </CardHeader>
         <Image
@@ -80,7 +74,7 @@ export default function Gallery() {
             <p className="text-black text-tiny">Comming Soon</p>
           </div>
           <Button className="text-tiny" color="primary" radius="full" size="sm">
-          Comming Soon
+            Comming Soon
           </Button>
         </CardFooter>
       </Card>
@@ -88,7 +82,7 @@ export default function Gallery() {
         isPressable
         onPress={handlePress}
         isFooterBlurred
-        className="w-full h-[300px] col-span-12 sm:col-span-7 hover:cursor-pointer"
+        className="w-full h-[300px] col-span-12 sm:col-span-7 hover:cursor-pointer hover:scale-105 transition duration-200"
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">

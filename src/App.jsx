@@ -9,13 +9,7 @@ import { DarkMode } from "./pages/DarkMode";
 function App() {
   const { language, theme, changeTheme, changeLanguage } = useStore();
 
-  return (
-    <>
-
-      {theme ? <LightMode /> : <DarkMode />}
-
-    </>
-  );
+  return <>{theme ? <DarkMode /> : <LightMode />}</>;
 }
 
 export default App;

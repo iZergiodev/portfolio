@@ -22,7 +22,7 @@ export function DarkMode() {
           className="w-full h-full"
         >
           <div className="w-full h-full flex">
-            <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
               <MainCard/>
 
               <div className="w-[480px]">
@@ -43,7 +43,7 @@ export function DarkMode() {
               </div>
             </div>
 
-            <div className="w-1/2 h-full flex flex-col justify-center items-center relative">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-10">
               <div className="absolute top-4 right-4 flex gap-2">
                 <Navbar />
               </div>
