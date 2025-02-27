@@ -3,6 +3,7 @@ import MainCard from "../components/MainCard";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
+import { Image } from "@heroui/react";
 
 export function DarkMode() {
   const { language, theme, changeTheme, changeLanguage } = useStore();
@@ -23,7 +24,7 @@ export function DarkMode() {
         >
           <div className="w-full h-full flex">
             <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
-              <MainCard/>
+              <MainCard />
 
               <div className="w-[480px]">
                 <div className="grid grid-cols-2 gap-8">
@@ -51,7 +52,7 @@ export function DarkMode() {
               <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
                 <div className="w-full">
                   <div className=" gap-8">
-                    <Gallery/>
+                    <Gallery />
                   </div>
                 </div>
               </div>

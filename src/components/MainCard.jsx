@@ -12,8 +12,15 @@ export default function MainCard() {
         />
       </CardHeader>
       <CardBody className="overflow-visible py-2">
-        <p className="text-center uppercase font-bold text-white text-lg">FrontEnd Developer</p>
-        <p className="text-white text-tiny max-w-[470px] text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officiis sunt ratione enim autem. Delectus amet facilis laudantium iure nesciunt excepturi? Alias ratione nulla provident nobis accusantium esse voluptas quasi!</p>
+        <p className="text-center uppercase font-bold text-white text-lg">
+          FrontEnd Developer
+        </p>
+        <p className="text-white text-tiny max-w-[470px] text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+          officiis sunt ratione enim autem. Delectus amet facilis laudantium
+          iure nesciunt excepturi? Alias ratione nulla provident nobis
+          accusantium esse voluptas quasi!
+        </p>
       </CardBody>
     </Card>
   );
