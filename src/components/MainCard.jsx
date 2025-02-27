@@ -2,10 +2,14 @@ import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import { useTranslation } from "react-i18next";
 import GradientText from "./GradientText";
 import './MainCard.css';
+import { useStore } from "../store/store";
 
 
 export default function MainCard() {
   const { t } = useTranslation();
+
+    const { theme, changeTheme} = useStore();
+  
 
   return (
     <Card className="py-4">
@@ -20,7 +24,7 @@ export default function MainCard() {
         </div>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
-        <p className="text-center uppercase font-bold text-white text-lg mb-3">
+        <p className="text-center uppercase font-bold text-lg mb-3">
           <GradientText
             colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
             animationSpeed={3}
@@ -30,7 +34,7 @@ export default function MainCard() {
             {t("role")}
           </GradientText>
         </p>
-        <p className="text-white text-tiny max-w-[50ch] text-center">
+        <p className={`text-tiny max-w-[50ch] text-center ${theme === true ? 'text-white' : 'text-black'}`} >
           {t("desc")}
         </p>
       </CardBody>

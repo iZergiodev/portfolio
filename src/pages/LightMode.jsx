@@ -1,15 +1,60 @@
+import Gallery from "../components/Gallery";
+import MainCard from "../components/MainCard";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export function LightMode() {
-  const { language, theme, changeTheme, changeLanguage } = useStore();
+  const { theme, changeTheme,} = useStore();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+    hover: {
+      scale: 1.1,
+      boxShadow: "0px 0px 15px rgba(0, 206, 209, 0.5)",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+      },
+    },
+  };
+
+  const socialLinks = {
+    linkedin: "https://www.linkedin.com/in/yagocimacastelao/",
+    github: "https://github.com/YagoCastelao",
+    curriculo: "#",
+  };
 
   return (
     <>
-      <div className="w-screen h-screen bg-amber-100">
+      <div className="w-screen h-screen bg-fuchsia-50">
         <Particles
           particleColors={["#8B00FF", "#00CED1"]}
           particleCount={1000}
@@ -22,62 +67,79 @@ export function LightMode() {
           className="w-full h-full"
         >
           <div className="w-full h-full flex">
-            <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6">
-              <div className="w-[670px] flex flex-col justify-center items-center bg-[#2D2D2D] rounded-lg overflow-hidden shadow-lg gap-2">
-                <div className="w-[350px] h-[350px] mt-3 shadow-lg">
-                  <img
-                    src="/teste.jpg"
-                    alt="Foto de exemplo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="bg-[#00CED1] p-4 h-[200px] m-3 rounded-2xl">
-                  <p className="text-md text-gray-500">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
+            <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
+              <MainCard />
 
-              <div className="w-[480px]">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">Linkedin</span>
-                  </div>
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">Github</span>
-                  </div>
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">CV</span>
-                  </div>
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">Contacto</span>
-                  </div>
-                </div>
+              <div className="w-[230px]">
+                <motion.div
+                  className="grid grid-cols-2 gap-8"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {[
+                    {
+                      src: "/linkedin.svg",
+                      alt: "linkedin",
+                      size: "w-[30px]",
+                      link: socialLinks.linkedin,
+                    },
+                    {
+                      src: "/github.svg",
+                      alt: "github",
+                      size: "w-[70px]",
+                      link: socialLinks.github,
+                    },
+                    { src: "/correo.svg", alt: "correo", size: "w-[30px]" },
+                    {
+                      src: "/curriculo.svg",
+                      alt: "curriculo",
+                      size: "w-[30px]",
+                      link: socialLinks.curriculo,
+                    },
+                  ].map((icon, index) => (
+                    <motion.div
+                      key={index}
+                      className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg cursor-pointer"
+                      variants={itemVariants}
+                      whileHover="hover"
+                    >
+                      {icon.link ? (
+                        <a
+                          href={icon.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <motion.img
+                            src={icon.src}
+                            alt={icon.alt}
+                            className={icon.size}
+                            whileHover={{ rotate: 10 }}
+                          />
+                        </a>
+                      ) : (
+                        <motion.img
+                          src={icon.src}
+                          alt={icon.alt}
+                          className={icon.size}
+                          whileHover={{ rotate: 10 }}
+                        />
+                      )}
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
             </div>
 
-            <div className="w-1/2 h-full flex flex-col justify-center items-center relative">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-10">
               <div className="absolute top-4 right-4 flex gap-2">
                 <Navbar />
               </div>
 
-              <div className="w-[1000px] h-[700px] bg-[#2D2D2D] rounded-lg flex items-center justify-center mr-30">
-                <div className="w-[800px]">
-                  <div className="grid grid-cols-2 gap-8 p-10">
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto I</span>
-                    </div>
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto II</span>
-                    </div>
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto III</span>
-                    </div>
-                    <div className="w-[300px] h-[290px] bg-[#6B7280] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                      <span className="text-[#E0E0E0]">Projecto IV</span>
-                    </div>
+              <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
+                <div className="w-full">
+                  <div className=" gap-8">
+                    <Gallery />
                   </div>
                 </div>
               </div>

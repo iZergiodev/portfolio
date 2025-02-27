@@ -7,7 +7,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export function DarkMode() {
-  const { language, theme, changeTheme, changeLanguage } = useStore();
+  const { theme, changeTheme } = useStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const containerVariants = {
