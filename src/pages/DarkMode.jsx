@@ -82,7 +82,7 @@ export function DarkMode() {
                   ].map((icon, index) => (
                     <motion.div
                       key={index}
-                      className="w-[90px] h-[90px] bg-[#00CED1] rounded-full flex items-center justify-center shadow-lg"
+                      className="w-[90px] h-[90px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg"
                       variants={itemVariants}
                       whileHover="hover"
                     >

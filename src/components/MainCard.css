@@ -1,0 +1,29 @@
+.gradient-border {
+  position: relative;
+  display: inline-block; /* Faz o contêiner se ajustar ao tamanho da imagem */
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -1px; /* Define a espessura da borda acima da imagem */
+  left: -1px; /* Espessura à esquerda */
+  right: -1px; /* Espessura à direita */
+  bottom: -1px; /* Espessura abaixo */
+  border-radius: 12px; /* Combina com rounded-xl */
+  background: linear-gradient(45deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
+  background-size: 200% 200%;
+  animation: gradientAnimation 3s ease infinite;
+  z-index: 0;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.gradient-border img {
+  position: relative;
+  z-index: 1; /* Garante que a imagem fique acima do gradiente */
+}
