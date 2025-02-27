@@ -3,30 +3,31 @@ import MainCard from "../components/MainCard";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export function DarkMode() {
   const { language, theme, changeTheme, changeLanguage } = useStore();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
       },
     },
   };
 
-  
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 20,
-      scale: 0.8 
+      scale: 0.8,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
@@ -36,13 +37,19 @@ export function DarkMode() {
       },
     },
     hover: {
-      scale: 1.1, 
+      scale: 1.1,
       boxShadow: "0px 0px 15px rgba(0, 206, 209, 0.5)",
       transition: {
         type: "spring",
         stiffness: 300,
       },
     },
+  };
+
+  const socialLinks = {
+    linkedin: "https://www.linkedin.com/in/yagocimacastelao/",
+    github: "https://github.com/YagoCastelao",
+    curriculo: "#",
   };
 
   return (
@@ -71,27 +78,53 @@ export function DarkMode() {
                   animate="visible"
                 >
                   {[
-                    { src: "/linkedin.svg", alt: "linkedin", size: "w-[30px]" },
-                    { src: "/github.svg", alt: "github", size: "w-[70px]" },
+                    {
+                      src: "/linkedin.svg",
+                      alt: "linkedin",
+                      size: "w-[30px]",
+                      link: socialLinks.linkedin,
+                    },
+                    {
+                      src: "/github.svg",
+                      alt: "github",
+                      size: "w-[70px]",
+                      link: socialLinks.github,
+                    },
                     { src: "/correo.svg", alt: "correo", size: "w-[30px]" },
                     {
                       src: "/curriculo.svg",
                       alt: "curriculo",
                       size: "w-[30px]",
+                      link: socialLinks.curriculo,
                     },
                   ].map((icon, index) => (
                     <motion.div
                       key={index}
-                      className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg"
+                      className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg cursor-pointer"
                       variants={itemVariants}
                       whileHover="hover"
                     >
-                      <motion.img
-                        src={icon.src}
-                        alt={icon.alt}
-                        className={icon.size}
-                        whileHover={{ rotate: 10 }}
-                      />
+                      {icon.link ? (
+                        <a
+                          href={icon.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <motion.img
+                            src={icon.src}
+                            alt={icon.alt}
+                            className={icon.size}
+                            whileHover={{ rotate: 10 }}
+                          />
+                        </a>
+                      ) : (
+                        <motion.img
+                          src={icon.src}
+                          alt={icon.alt}
+                          className={icon.size}
+                          whileHover={{ rotate: 10 }}
+                        />
+                      )}
                     </motion.div>
                   ))}
                 </motion.div>
