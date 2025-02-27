@@ -63,7 +63,7 @@ export function DarkMode() {
             <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
               <MainCard />
 
-              <div className="w-[280px]">
+              <div className="w-[230px]">
                 <motion.div
                   className="grid grid-cols-2 gap-8"
                   variants={containerVariants}
@@ -71,18 +71,18 @@ export function DarkMode() {
                   animate="visible"
                 >
                   {[
-                    { src: "/linkedin.svg", alt: "linkedin", size: "w-[40px]" },
-                    { src: "/github.svg", alt: "github", size: "w-[90px]" },
-                    { src: "/correo.svg", alt: "correo", size: "w-[40px]" },
+                    { src: "/linkedin.svg", alt: "linkedin", size: "w-[30px]" },
+                    { src: "/github.svg", alt: "github", size: "w-[70px]" },
+                    { src: "/correo.svg", alt: "correo", size: "w-[30px]" },
                     {
                       src: "/curriculo.svg",
                       alt: "curriculo",
-                      size: "w-[40px]",
+                      size: "w-[30px]",
                     },
                   ].map((icon, index) => (
                     <motion.div
                       key={index}
-                      className="w-[90px] h-[90px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg"
+                      className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg"
                       variants={itemVariants}
                       whileHover="hover"
                     >
