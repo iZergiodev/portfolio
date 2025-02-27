@@ -13,7 +13,7 @@ export default function Gallery() {
     );
   };
   return (
-    <div className="max-w-[900px] h-[670px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
+    <div className="max-w-[1000px] h-[670px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
       <Card className="col-span-12 sm:col-span-4 h-[320px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
@@ -104,9 +104,14 @@ export default function Gallery() {
         />
         <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
-            <div className="flex flex-col p-2">
-              <h1 className=" text-white font-bold text text-xl max-w-5" >Flash4Devs</h1>
+            <div className="flex flex-col">
+            <div className="flex justify-between p-2 pb-0 w-[150px]">
+              <h1 className=" text-white font-bold text text-xl " >Flash4Devs</h1>
+              <img src="/favicon1.png" alt="" className="w-[20px] h-[25px]"/>
+            </div>
+            <div className="p-2 pt-0">
               <p className="text-tiny text-white/60">{t('flash4devsDescription')}</p>
+            </div>
             </div>
           </div>
           <Button
