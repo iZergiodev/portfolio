@@ -1,6 +1,10 @@
 import { Card, CardHeader, CardFooter, Image, Button } from "@heroui/react";
+import { useTranslation } from "react-i18next";
 
 export default function Gallery() {
+
+  const { t } = useTranslation();
+
   const handlePress = () => {
     window.open(
       "https://front-flash4-devs.vercel.app/",
@@ -101,8 +105,8 @@ export default function Gallery() {
         <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
             <div className="flex flex-col p-2">
-              <p className=" text-white font-bold text text-xl">Flash4Devs</p>
-              <p className="text-tiny text-white/60">A new way to learn</p>
+              <h1 className=" text-white font-bold text text-xl max-w-5" >Flash4Devs</h1>
+              <p className="text-tiny text-white/60">{t('flash4devsDescription')}</p>
             </div>
           </div>
           <Button

@@ -1,6 +1,12 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
+import { useTranslation } from "react-i18next";
 
 export default function MainCard() {
+
+  const { t } = useTranslation();
+
+
+
   return (
     <Card className="py-4">
       <CardHeader className="pb-0 pt-2 px-4 flex-col">
@@ -13,7 +19,7 @@ export default function MainCard() {
       </CardHeader>
       <CardBody className="overflow-visible py-2">
         <p className="text-center uppercase font-bold text-white text-lg">
-          FrontEnd Developer
+          {t('role')}
         </p>
         <p className="text-white text-tiny max-w-[470px] text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet

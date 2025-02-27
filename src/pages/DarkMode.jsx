@@ -3,7 +3,6 @@ import MainCard from "../components/MainCard";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
-import { Image } from "@heroui/react";
 
 export function DarkMode() {
   const { language, theme, changeTheme, changeLanguage } = useStore();
