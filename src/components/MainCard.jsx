@@ -13,11 +13,11 @@ export default function MainCard() {
           alt="Card background"
           className="object-cover rounded-xl"
           src="yagop.jpg"
-          width={300}
+          width={320}
         />
       </CardHeader>
       <CardBody className="overflow-visible py-2">
-        <p className="text-center uppercase font-bold text-white text-lg">
+        <p className="text-center uppercase font-bold text-white text-lg mb-3">
           <GradientText
             colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
             animationSpeed={3}
@@ -27,11 +27,8 @@ export default function MainCard() {
             {t("role")}
           </GradientText>
         </p>
-        <p className="text-white text-tiny max-w-[470px] text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          officiis sunt ratione enim autem. Delectus amet facilis laudantium
-          iure nesciunt excepturi? Alias ratione nulla provident nobis
-          accusantium esse voluptas quasi!
+        <p className="text-white text-tiny max-w-[50ch] text-center">
+          {t('desc')}
         </p>
       </CardBody>
     </Card>
