@@ -3,9 +3,47 @@ import MainCard from "../components/MainCard";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
+import { motion } from "framer-motion";
 
 export function DarkMode() {
   const { language, theme, changeTheme, changeLanguage } = useStore();
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, 
+      },
+    },
+  };
+
+  
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      scale: 0.8 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    },
+    hover: {
+      scale: 1.1, 
+      boxShadow: "0px 0px 15px rgba(0, 206, 209, 0.5)",
+      transition: {
+        type: "spring",
+        stiffness: 300,
+      },
+    },
+  };
 
   return (
     <>
@@ -25,21 +63,38 @@ export function DarkMode() {
             <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
               <MainCard />
 
-              <div className="w-[480px]">
-                <div className="grid grid-cols-2 gap-8">
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">Linkedin</span>
-                  </div>
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">Github</span>
-                  </div>
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">CV</span>
-                  </div>
-                  <div className="w-[220px] h-[110px] bg-[#8B00FF] rounded-lg flex items-center justify-center shadow-lg border-1 border-b-[#6B7280]">
-                    <span className="text-white">Contacto</span>
-                  </div>
-                </div>
+              <div className="w-[280px]">
+                <motion.div
+                  className="grid grid-cols-2 gap-8"
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {[
+                    { src: "/linkedin.svg", alt: "linkedin", size: "w-[40px]" },
+                    { src: "/github.svg", alt: "github", size: "w-[90px]" },
+                    { src: "/correo.svg", alt: "correo", size: "w-[40px]" },
+                    {
+                      src: "/curriculo.svg",
+                      alt: "curriculo",
+                      size: "w-[40px]",
+                    },
+                  ].map((icon, index) => (
+                    <motion.div
+                      key={index}
+                      className="w-[90px] h-[90px] bg-[#00CED1] rounded-full flex items-center justify-center shadow-lg"
+                      variants={itemVariants}
+                      whileHover="hover"
+                    >
+                      <motion.img
+                        src={icon.src}
+                        alt={icon.alt}
+                        className={icon.size}
+                        whileHover={{ rotate: 10 }}
+                      />
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
             </div>
 
