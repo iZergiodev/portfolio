@@ -1,5 +1,12 @@
 {
   "role": "Desenvolvedor FrontEnd",
   "flash4devsDescription": "Uma nova maneira de aprender",
-  "desc": "Sou um programador web apaixonado por criar soluções digitais inovadoras e funcionais. Gosto de projetar interfaces intuitivas e otimizar a experiência do usuário. Minha abordagem combina criatividade com precisão técnica para desenvolver projetos únicos e eficientes que superam as expectativas"
+  "desc": "Sou um programador web apaixonado por criar soluções digitais inovadoras e funcionais. Gosto de projetar interfaces intuitivas e otimizar a experiência do usuário. Minha abordagem combina criatividade com precisão técnica para desenvolver projetos únicos e eficientes que superam as expectativas",
+  "mailStatusSuccess": "Correio enviado com sucesso",
+  "mailStatusError": "Erro no envio de correio eletrónico",
+  "yourName": "O seu nome",
+  "yourEmail": "Su email",
+  "yourMessage": "A sua mensagem",
+  "send": "Enviar"
+
 }

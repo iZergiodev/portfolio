@@ -2,8 +2,12 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MdPerson, MdEmail, MdMessage, MdSend } from 'react-icons/md'
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 export const Modal = ({ isOpen, onClose }) => {
+
+    const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,10 +27,10 @@ export const Modal = ({ isOpen, onClose }) => {
       'YfgFoMeo3w2cpqtAv' 
     )
       .then((result) => {
-        alert('Correo enviado con éxito');
+        alert(t('mailStatusSuccess'));
         console.log(result.text);
       }, (error) => {
-        alert('Error al enviar el correo');
+        alert(t('mailStatusError'));
         console.log(error.text);
       });
     setFormData({ name: "", email: "", message: "" });
@@ -63,7 +67,7 @@ export const Modal = ({ isOpen, onClose }) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Seu nome"
+              placeholder={t('yourName')}
               className="w-full outline-none"
               required
             />
@@ -76,7 +80,7 @@ export const Modal = ({ isOpen, onClose }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Seu e-mail"
+              placeholder={t('yourEmail')}
               className="w-full outline-none"
               required
             />
@@ -88,7 +92,7 @@ export const Modal = ({ isOpen, onClose }) => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Sua mensagem"
+              placeholder={t('yourMessage')}
               className="w-full h-24 outline-none resize-none"
               required
             />
@@ -99,7 +103,7 @@ export const Modal = ({ isOpen, onClose }) => {
             className="w-full bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white py-2 rounded-md flex items-center justify-center gap-2 hover:brightness-110 transition"
           >
             <MdSend size={20} />
-            Enviar
+            {t('send')}
           </button>
         </form>
 
