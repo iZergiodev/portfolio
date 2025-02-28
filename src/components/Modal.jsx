@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MdPerson, MdEmail, MdMessage, MdSend } from 'react-icons/md'
+import emailjs from '@emailjs/browser';
 
 export const Modal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -15,10 +16,22 @@ export const Modal = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //Poner aqui lógica de envio email
-    console.log("Datos del formulario:", formData);
+    emailjs.send(
+      'service_t83l3u8',
+      'template_ykxkl27',
+      formData,
+      'YfgFoMeo3w2cpqtAv' 
+    )
+      .then((result) => {
+        alert('Correo enviado con éxito');
+        console.log(result.text);
+      }, (error) => {
+        alert('Error al enviar el correo');
+        console.log(error.text);
+      });
     setFormData({ name: "", email: "", message: "" });
     onClose();
+    
   };
 
   if (!isOpen) return null;
