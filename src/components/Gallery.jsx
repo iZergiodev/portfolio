@@ -2,7 +2,6 @@ import { Card, CardHeader, CardFooter, Image, Button } from "@heroui/react";
 import { useTranslation } from "react-i18next";
 
 export default function Gallery() {
-
   const { t } = useTranslation();
 
   const handlePress = () => {
@@ -58,24 +57,25 @@ export default function Gallery() {
       </Card>
       <Card
         isFooterBlurred
-        className="w-full h-[360px] col-span-12 sm:col-span-5"
+        className="w-full h-[360px] col-span-12 sm:col-span-5" 
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
             Comming Soon
           </p>
-          <h4 className="text-black font-medium text-2xl">Comming Soon</h4>
+          <h4 className="text-white font-medium text-2xl">Comming Soon</h4>{" "}
+          {/* Texto blanco */}
         </CardHeader>
         <Image
           removeWrapper
           alt="Card example background"
-          className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
+          className="z-0 w-full h-full object-cover" 
           src="https://i.pinimg.com/736x/75/6c/9a/756c9a39d51bbe175df7a6f0fd01bde6.jpg"
         />
-        <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+        <CardFooter className="absolute bg-white/50 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
           <div>
-            <p className="text-black text-tiny">Comming Soon</p>
-            <p className="text-black text-tiny">Comming Soon</p>
+            <p className="text-white text-tiny">Comming Soon</p>{" "}
+            <p className="text-white text-tiny">Comming Soon</p>
           </div>
           <Button className="text-tiny" color="primary" radius="full" size="sm">
             Comming Soon
@@ -105,13 +105,17 @@ export default function Gallery() {
         <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
             <div className="flex flex-col">
-            <div className="flex justify-between p-2 pb-0 w-[150px]">
-              <h1 className=" text-white font-bold text text-xl " >Flash4Devs</h1>
-              <img src="/favicon1.png" alt="" className="w-[20px] h-[25px]"/>
-            </div>
-            <div className="p-2 pt-0">
-              <p className="text-tiny text-white/60">{t('flash4devsDescription')}</p>
-            </div>
+              <div className="flex justify-between p-2 pb-0 w-[150px]">
+                <h1 className=" text-white font-bold text text-xl ">
+                  Flash4Devs
+                </h1>
+                <img src="/favicon1.png" alt="" className="w-[20px] h-[25px]" />
+              </div>
+              <div className="p-2 pt-0">
+                <p className="text-tiny text-white/60">
+                  {t("flash4devsDescription")}
+                </p>
+              </div>
             </div>
           </div>
           <Button
