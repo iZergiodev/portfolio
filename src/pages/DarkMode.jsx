@@ -5,6 +5,7 @@ import Particles from "../components/Particles";
 import { useStore } from "../store/store";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Modal } from "../components/Modal";
 
 export function DarkMode() {
   const { theme, changeTheme } = useStore();
@@ -90,7 +91,12 @@ export function DarkMode() {
                       size: "w-[70px]",
                       link: socialLinks.github,
                     },
-                    { src: "/correo.svg", alt: "correo", size: "w-[30px]" },
+                    {
+                      src: "/correo.svg",
+                      alt: "correo",
+                      size: "w-[30px]",
+                      onClick: () => setIsModalOpen(true),
+                    },
                     {
                       src: "/curriculo.svg",
                       alt: "curriculo",
@@ -103,6 +109,7 @@ export function DarkMode() {
                       className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg cursor-pointer"
                       variants={itemVariants}
                       whileHover="hover"
+                      onClick={icon.onClick}
                     >
                       {icon.link ? (
                         <a
@@ -146,6 +153,7 @@ export function DarkMode() {
             </div>
           </div>
         </Particles>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </>
   );
