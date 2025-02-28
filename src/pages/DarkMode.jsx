@@ -138,14 +138,14 @@ export function DarkMode() {
               </div>
             </div>
 
-            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-10">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-25">
               <div className="absolute top-4 right-4 flex gap-2">
                 <Navbar />
               </div>
 
               <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
                 <div className="w-full">
-                  <div className=" gap-8">
+                  <div className=" gap-8 scale-105">
                     <Gallery />
                   </div>
                 </div>

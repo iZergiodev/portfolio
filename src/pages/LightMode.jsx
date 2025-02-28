@@ -138,7 +138,7 @@ export function LightMode() {
 
               <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
                 <div className="w-full">
-                  <div className=" gap-8">
+                  <div className=" gap-8 scale-105">
                     <Gallery />
                   </div>
                 </div>
