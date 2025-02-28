@@ -18,7 +18,7 @@ export default function MainCard() {
           <Image
             alt="Card background"
             className="object-cover rounded-xl"
-            src="yagop.jpg"
+            src="sergio.jpeg"
             width={320}
           />
         </div>

@@ -48,9 +48,9 @@ export function DarkMode() {
   };
 
   const socialLinks = {
-    linkedin: "https://www.linkedin.com/in/yagocimacastelao/",
-    github: "https://github.com/YagoCastelao",
-    curriculo: "#",
+    linkedin: "https://www.linkedin.com/in/izergiodev/",
+    github: "https://github.com/iZergiodev",
+    curriculo: "SergioCarreteroMolina.pdf",
   };
 
   return (
