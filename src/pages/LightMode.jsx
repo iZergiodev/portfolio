@@ -131,7 +131,7 @@ export function LightMode() {
               </div>
             </div>
 
-            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-10">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-25">
               <div className="absolute top-4 right-4 flex gap-2">
                 <Navbar />
               </div>
