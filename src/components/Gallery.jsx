@@ -12,7 +12,7 @@ export default function Gallery() {
     );
   };
   return (
-    <div className="w-[100vw] h-36 space-y-1 sm:w-[50vw] sm:h-[71vh] gap-2 sm:grid grid-cols-12 grid-rows-2 sm:px-8 mt-25">
+    <div className="w-[100vw] h-36 space-y-1 sm:w-[50vw] sm:h-[75vh] sm:mb-15 gap-2 sm:grid grid-cols-12 grid-rows-2 sm:px-8 mt-25">
       <Card className="col-span-12 sm:col-span-4 h-full">
         <Image
           removeWrapper
