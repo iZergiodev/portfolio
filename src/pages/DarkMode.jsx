@@ -58,7 +58,12 @@ export function DarkMode() {
       <div className="absolute top-4 right-4 flex gap-2 z-50">
         <Navbar />
       </div>
-      <div className="w-screen h-screen bg-black overflow-auto">
+      <div className="w-screen relative h-screen bg-black overflow-auto">
+        <img
+          src="https://img1.akspic.ru/crops/1/1/2/4/6/164211/164211-4_j_den_posle_novoluniya-luna-lunnaya_faza-polumesyac-venera-1920x1080.jpg"
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <Particles
           particleColors={["#8B00FF", "#00CED1"]}
           particleCount={1000}
@@ -68,7 +73,7 @@ export function DarkMode() {
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
-          className="w-full h-full"
+          className="absolute inset-0 w-full h-full"
         >
           <div className="w-full h-full flex sm:flex-row flex-col mt-25 lg:mt-0">
             <div className="w-full h-full flex flex-col justify-center items-center gap-6 mr-[-25px]">

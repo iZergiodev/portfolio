@@ -1,5 +1,5 @@
-import Gallery from "../components/Gallery";
-import MainCard from "../components/MainCard";
+import GalleryLight from "../components/GalleryLight";
+import MainCardLight from "../components/MainCardLight";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
 import { useStore } from "../store/store";
@@ -58,9 +58,14 @@ export function LightMode() {
       <div className="absolute top-4 right-4 flex gap-2 z-50">
         <Navbar />
       </div>
-      <div className="w-screen h-screen bg-[#fffff] overflow-auto">
+      <div className="w-screen relative h-screen bg-white overflow-auto">
+        <img
+          src="https://wallpapers.com/images/hd/galaxy-moon-and-sunset-yflymgf0ggp674jv.jpg"
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <Particles
-          particleColors={["#8B00FF", "#00CED1"]}
+          particleColors={["#FF0000", "#FFFF00"]}
           particleCount={1000}
           particleSpread={10}
           speed={0.1}
@@ -68,11 +73,11 @@ export function LightMode() {
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
-          className="w-full h-full"
+          className="absolute inset-0 w-full h-full"
         >
           <div className="w-full h-full flex lg:flex-row flex-col mt-25 lg:mt-0">
             <div className="w-full h-full flex flex-col justify-center items-center gap-6 mr-[-25px]">
-              <MainCard />
+              <MainCardLight />
 
               <div className="w-[230x]">
                 <motion.div
@@ -109,7 +114,7 @@ export function LightMode() {
                   ].map((icon, index) => (
                     <motion.div
                       key={index}
-                      className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg cursor-pointer"
+                      className="w-[65px] h-[65px] bg-gradient-to-r from-[#FF0000] via-[#FF8000] to-[#FFFF00] rounded-full flex items-center justify-center shadow-lg cursor-pointer"
                       variants={itemVariants}
                       whileHover="hover"
                       onClick={icon.onClick}
@@ -145,7 +150,7 @@ export function LightMode() {
               <div className="w-full h-full rounded-lg flex items-center justify-center mr-0 sm:mr-10 xl:mr-25">
                 <div className="w-full">
                   <div className=" gap-8 scale-105">
-                    <Gallery />
+                    <GalleryLight />
                   </div>
                 </div>
               </div>

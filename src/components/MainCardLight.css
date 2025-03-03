@@ -1,9 +1,9 @@
-.gradient-border {
+.gradient-bordeer {
   position: relative;
   display: inline-block;
 }
 
-.gradient-border::before {
+.gradient-bordeer::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -11,7 +11,7 @@
   right: -2px;
   bottom: -2px;
   border-radius: 12px;
-  background: linear-gradient(45deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
+  background: linear-gradient(45deg, #FF8000, #FF0000, #FFFF00, #FF0000, #FFFF00);
   background-size: 200% 200%;
   animation: gradientAnimation 3s ease infinite;
   z-index: 0;
