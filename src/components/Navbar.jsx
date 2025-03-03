@@ -38,7 +38,7 @@ export const Navbar = () => {
           checked={theme}
           onChange={changeTheme}
           size={40}
-          sunColor={"black"}
+          sunColor={"yellow"}
           moonColor={"white"}
         />
       </div>

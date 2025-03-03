@@ -1,4 +1,4 @@
-import Gallery from "../components/Gallery";
+import GalleryLight from "../components/GalleryLight";
 import MainCardLight from "../components/MainCardLight";
 import { Navbar } from "../components/Navbar";
 import Particles from "../components/Particles";
@@ -150,7 +150,7 @@ export function LightMode() {
               <div className="w-full h-full rounded-lg flex items-center justify-center mr-0 sm:mr-10 xl:mr-25">
                 <div className="w-full">
                   <div className=" gap-8 scale-105">
-                    <Gallery />
+                    <GalleryLight />
                   </div>
                 </div>
               </div>
