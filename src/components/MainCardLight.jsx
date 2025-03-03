@@ -34,7 +34,7 @@ export default function MainCardLight() {
         </p>
         <p
           className={`type-text text-tiny max-w-[40ch] text-m px-5 lg:px-0 lg:text-lg text-center ${
-            theme === true ? "text-white" : "text-black"
+            theme === true ? "text-white" : "text-white"
           }`}
         >
           {t("desc")}
