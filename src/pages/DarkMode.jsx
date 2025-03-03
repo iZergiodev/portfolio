@@ -55,7 +55,10 @@ export function DarkMode() {
 
   return (
     <>
-      <div className="w-screen h-screen bg-black">
+      <div className="absolute top-4 right-4 flex gap-2 z-50">
+        <Navbar />
+      </div>
+      <div className="w-screen h-screen bg-black overflow-auto">
         <Particles
           particleColors={["#8B00FF", "#00CED1"]}
           particleCount={1000}
@@ -67,11 +70,11 @@ export function DarkMode() {
           disableRotation={false}
           className="w-full h-full"
         >
-          <div className="w-full h-full flex">
-            <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
+          <div className="w-full h-full flex lg:flex-row flex-col mt-25 lg:mt-0">
+            <div className="w-full h-full flex flex-col justify-center items-center gap-6 mr-[-25px]">
               <MainCard />
 
-              <div className="w-[230px]">
+              <div className="w-[230x]">
                 <motion.div
                   className="grid grid-cols-2 gap-8"
                   variants={containerVariants}
@@ -138,12 +141,8 @@ export function DarkMode() {
               </div>
             </div>
 
-            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-25">
-              <div className="absolute top-4 right-4 flex gap-2">
-                <Navbar />
-              </div>
-
-              <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-0 sm:mr-10 xl:mr-25">
+              <div className="w-full h-full rounded-lg flex items-center justify-center mr-0 sm:mr-10 xl:mr-25">
                 <div className="w-full">
                   <div className=" gap-8 scale-105">
                     <Gallery />

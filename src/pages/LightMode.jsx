@@ -5,9 +5,10 @@ import Particles from "../components/Particles";
 import { useStore } from "../store/store";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Modal } from "../components/Modal";
 
 export function LightMode() {
-  const { theme, changeTheme,} = useStore();
+  const { theme, changeTheme } = useStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const containerVariants = {
@@ -47,14 +48,17 @@ export function LightMode() {
   };
 
   const socialLinks = {
-    linkedin: "https://www.linkedin.com/in/yagocimacastelao/",
-    github: "https://github.com/YagoCastelao",
-    curriculo: "#",
+    linkedin: "https://www.linkedin.com/in/izergiodev/",
+    github: "https://github.com/iZergiodev",
+    curriculo: "SergioCarreteroMolina.pdf",
   };
 
   return (
     <>
-      <div className="w-screen h-screen bg-fuchsia-50">
+      <div className="absolute top-4 right-4 flex gap-2 z-50">
+        <Navbar />
+      </div>
+      <div className="w-screen h-screen bg-[#fffff] overflow-auto">
         <Particles
           particleColors={["#8B00FF", "#00CED1"]}
           particleCount={1000}
@@ -66,11 +70,11 @@ export function LightMode() {
           disableRotation={false}
           className="w-full h-full"
         >
-          <div className="w-full h-full flex">
-            <div className="w-1/2 h-full flex flex-col justify-center items-center gap-6 mr-10">
+          <div className="w-full h-full flex lg:flex-row flex-col mt-25 lg:mt-0">
+            <div className="w-full h-full flex flex-col justify-center items-center gap-6 mr-[-25px]">
               <MainCard />
 
-              <div className="w-[230px]">
+              <div className="w-[230x]">
                 <motion.div
                   className="grid grid-cols-2 gap-8"
                   variants={containerVariants}
@@ -90,7 +94,12 @@ export function LightMode() {
                       size: "w-[70px]",
                       link: socialLinks.github,
                     },
-                    { src: "/correo.svg", alt: "correo", size: "w-[30px]" },
+                    {
+                      src: "/correo.svg",
+                      alt: "correo",
+                      size: "w-[30px]",
+                      onClick: () => setIsModalOpen(true),
+                    },
                     {
                       src: "/curriculo.svg",
                       alt: "curriculo",
@@ -103,6 +112,7 @@ export function LightMode() {
                       className="w-[65px] h-[65px] bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] rounded-full flex items-center justify-center shadow-lg cursor-pointer"
                       variants={itemVariants}
                       whileHover="hover"
+                      onClick={icon.onClick}
                     >
                       {icon.link ? (
                         <a
@@ -131,12 +141,8 @@ export function LightMode() {
               </div>
             </div>
 
-            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-25">
-              <div className="absolute top-4 right-4 flex gap-2">
-                <Navbar />
-              </div>
-
-              <div className="w-[1000px] h-full rounded-lg flex items-center justify-center mr-30">
+            <div className="w-1/2 h-full flex flex-col justify-center items-center relative mr-0 sm:mr-10 xl:mr-25">
+              <div className="w-full h-full rounded-lg flex items-center justify-center mr-0 sm:mr-10 xl:mr-25">
                 <div className="w-full">
                   <div className=" gap-8 scale-105">
                     <Gallery />
@@ -146,6 +152,7 @@ export function LightMode() {
             </div>
           </div>
         </Particles>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </>
   );

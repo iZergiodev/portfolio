@@ -17,7 +17,7 @@ export default function MainCard() {
         <div className="gradient-border">
           <Image
             alt="Card background"
-            className="object-cover rounded-xl"
+            className="object-cover rounded-xl w-full"
             src="sergio.jpeg"
             width={320}
           />
@@ -29,12 +29,12 @@ export default function MainCard() {
             colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
             animationSpeed={3}
             showBorder={false}
-            className="custom-class"
+            className="custom-class type-text"
           >
             {t("role")}
           </GradientText>
         </p>
-        <p className={`text-tiny max-w-[50ch] text-center ${theme === true ? 'text-white' : 'text-black'}`} >
+        <p className={`type-text text-tiny max-w-[40ch] text-m px-5 lg:px-0 lg:text-lg text-center ${theme === true ? 'text-white' : 'text-black'}`} >
           {t("desc")}
         </p>
       </CardBody>

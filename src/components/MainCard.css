@@ -27,3 +27,7 @@
   position: relative;
   z-index: 1; /* Garante que a imagem fique acima do gradiente */
 }
+
+.type-text {
+  font-family: "Red Hat Display", serif;
+}
