@@ -12,7 +12,7 @@ export default function Gallery() {
     );
   };
   return (
-    <div className="w-[100vw] h-36 space-y-1 sm:w-[50vw] sm:h-[75vh] sm:mb-15 gap-2 sm:grid grid-cols-12 grid-rows-2 sm:px-8 mt-25">
+    <div className="w-[100vw] h-52 space-y-1 sm:w-[50vw] sm:h-[75vh] sm:mb-15 gap-2 sm:grid grid-cols-12 grid-rows-2 sm:px-8 mt-25">
       <Card className="col-span-12 sm:col-span-4 h-full">
         <Image
           removeWrapper
@@ -58,7 +58,7 @@ export default function Gallery() {
         isPressable
         onPress={handlePress}
         isFooterBlurred
-        className="pb-10 sm:pb-0 col-span-12 sm:col-span-7 hover:cursor-pointer hover:scale-105 transition duration-200"
+        className="pb-20 sm:pb-0 col-span-12 sm:col-span-7 hover:cursor-pointer hover:scale-105 transition duration-200"
       >
         <Image
           removeWrapper
