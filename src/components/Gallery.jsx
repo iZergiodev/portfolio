@@ -12,67 +12,39 @@ export default function Gallery() {
     );
   };
   return (
-    <div className="max-w-[1000px] h-[670px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
-      <Card className="col-span-12 sm:col-span-4 h-[330px]">
-        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
-            Comming Soon
-          </p>
-          <h4 className="text-white font-medium text-large">Comming Soon</h4>
-        </CardHeader>
+    <div className="w-[100vw] h-36 space-y-1 sm:w-[50vw] sm:h-[71vh] gap-2 sm:grid grid-cols-12 grid-rows-2 sm:px-8 mt-25">
+      <Card className="col-span-12 sm:col-span-4 h-full">
         <Image
           removeWrapper
           alt="Card background"
-          className="z-0 w-full h-full object-cover"
-          src="https://i.pinimg.com/736x/75/6c/9a/756c9a39d51bbe175df7a6f0fd01bde6.jpg"
+          className="z-0 w-full h-full object-center sm:object-cover"
+          src="alien.jpg"
         />
       </Card>
-      <Card className="col-span-12 sm:col-span-4 h-[330px]">
-        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
-            Comming Soon
-          </p>
-          <h4 className="text-white font-medium text-large">Comming Soon</h4>
-        </CardHeader>
+      <Card className="col-span-12 sm:col-span-4 h-full">
         <Image
           removeWrapper
           alt="Card background"
-          className="z-0 w-full h-full object-cover"
-          src="https://i.pinimg.com/736x/75/6c/9a/756c9a39d51bbe175df7a6f0fd01bde6.jpg"
+          className="z-0 w-full h-full object-center sm:object-cover"
+          src="alien.jpg"
         />
       </Card>
-      <Card className="col-span-12 sm:col-span-4 h-[330px]">
-        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
-            Comming Soon
-          </p>
-          <h4 className="text-white font-medium text-large">Comming Soon</h4>
-        </CardHeader>
+      <Card className="col-span-12 sm:col-span-4 h-full">
         <Image
           removeWrapper
           alt="Card background"
-          className="z-0 w-full h-full object-cover"
-          src="https://i.pinimg.com/736x/75/6c/9a/756c9a39d51bbe175df7a6f0fd01bde6.jpg"
+          className="z-0 w-full h-full object-center sm:object-cover"
+          src="alien.jpg"
         />
       </Card>
-      <Card
-        isFooterBlurred
-        className="w-full h-[360px] col-span-12 sm:col-span-5" 
-      >
-        <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
-            Comming Soon
-          </p>
-          <h4 className="text-white font-medium text-2xl">Comming Soon</h4>{" "}
-          {/* Texto blanco */}
-        </CardHeader>
+      <Card isFooterBlurred className="w-full h-full col-span-12 sm:col-span-5">
         <Image
           removeWrapper
           alt="Card example background"
-          className="z-0 w-full h-full object-cover" 
-          src="https://i.pinimg.com/736x/75/6c/9a/756c9a39d51bbe175df7a6f0fd01bde6.jpg"
+          className="z-0 w-full h-full object-center sm:object-cover"
+          src="alien.jpg"
         />
-        <CardFooter className="absolute bg-white/50 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+        {/* <CardFooter className="absolute bg-white/50 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
           <div>
             <p className="text-white text-tiny">Comming Soon</p>{" "}
             <p className="text-white text-tiny">Comming Soon</p>
@@ -80,29 +52,21 @@ export default function Gallery() {
           <Button className="text-tiny" color="primary" radius="full" size="sm">
             Comming Soon
           </Button>
-        </CardFooter>
+        </CardFooter> */}
       </Card>
       <Card
         isPressable
         onPress={handlePress}
         isFooterBlurred
-        className="w-full h-[360px] col-span-12 sm:col-span-7 hover:cursor-pointer hover:scale-105 transition duration-200"
+        className="pb-10 sm:pb-0 col-span-12 sm:col-span-7 hover:cursor-pointer hover:scale-105 transition duration-200"
       >
-        <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
-            Your day your way
-          </p>
-          <h4 className="text-white/90 font-medium text-xl">
-            Your checklist for better sleep
-          </h4>
-        </CardHeader>
         <Image
           removeWrapper
           alt="Relaxing app background"
           className="z-0 w-full h-full object-cover"
           src="https://i.gyazo.com/defc0d426305b4f9a5ff487458a84454.jpg"
         />
-        <CardFooter className="absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+        <CardFooter className="hidden sm:flex sm:absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
             <div className="flex flex-col">
               <div className="flex justify-between p-2 pb-0 w-[150px]">
