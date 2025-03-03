@@ -75,7 +75,7 @@ export function LightMode() {
           disableRotation={false}
           className="absolute inset-0 w-full h-full"
         >
-          <div className="w-full h-full flex lg:flex-row flex-col mt-25 lg:mt-0">
+          <div className="w-full h-full flex sm:flex-row flex-col mt-25 lg:mt-0">
             <div className="w-full h-full flex flex-col justify-center items-center gap-6 mr-[-25px]">
               <MainCardLight />
 
