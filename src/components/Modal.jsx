@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { MdPerson, MdEmail, MdMessage, MdSend } from 'react-icons/md'
-import emailjs from '@emailjs/browser';
-import { useTranslation } from 'react-i18next';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MdPerson, MdEmail, MdMessage, MdSend } from "react-icons/md";
+import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 export const Modal = ({ isOpen, onClose }) => {
-
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -20,22 +19,25 @@ export const Modal = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send(
-      'service_t83l3u8',
-      'template_ykxkl27',
-      formData,
-      'YfgFoMeo3w2cpqtAv' 
-    )
-      .then((result) => {
-        alert(t('mailStatusSuccess'));
-        console.log(result.text);
-      }, (error) => {
-        alert(t('mailStatusError'));
-        console.log(error.text);
-      });
+    emailjs
+      .send(
+        "service_t83l3u8",
+        "template_ykxkl27",
+        formData,
+        "YfgFoMeo3w2cpqtAv"
+      )
+      .then(
+        (result) => {
+          alert(t("mailStatusSuccess"));
+          console.log(result.text);
+        },
+        (error) => {
+          alert(t("mailStatusError"));
+          console.log(error.text);
+        }
+      );
     setFormData({ name: "", email: "", message: "" });
     onClose();
-    
   };
 
   if (!isOpen) return null;
@@ -59,7 +61,6 @@ export const Modal = ({ isOpen, onClose }) => {
           Enviar E-mail
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-
           <div className="flex items-center border border-[#40ffaa] rounded-md p-2">
             <MdPerson className="text-[#4079ff] mr-2" size={20} />
             <input
@@ -67,7 +68,7 @@ export const Modal = ({ isOpen, onClose }) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder={t('yourName')}
+              placeholder={t("yourName")}
               className="w-full outline-none"
               required
             />
@@ -80,7 +81,7 @@ export const Modal = ({ isOpen, onClose }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder={t('yourEmail')}
+              placeholder={t("yourEmail")}
               className="w-full outline-none"
               required
             />
@@ -92,7 +93,7 @@ export const Modal = ({ isOpen, onClose }) => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder={t('yourMessage')}
+              placeholder={t("yourMessage")}
               className="w-full h-24 outline-none resize-none"
               required
             />
@@ -103,7 +104,7 @@ export const Modal = ({ isOpen, onClose }) => {
             className="w-full bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white py-2 rounded-md flex items-center justify-center gap-2 hover:brightness-110 transition"
           >
             <MdSend size={20} />
-            {t('send')}
+            {t("send")}
           </button>
         </form>
 
