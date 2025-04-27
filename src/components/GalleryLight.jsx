@@ -37,22 +37,43 @@ export default function Gallery() {
           src="alienlight.jpg"
         />
       </Card>
-      <Card isFooterBlurred className="w-full h-full col-span-12 sm:col-span-5">
+      <Card
+        isFooterBlurred
+        isPressable
+        onPress={() => handlePress("https://youare-notalone.duckdns.org/")}
+        className="w-full h-full col-span-12 sm:col-span-5 hover:scale-105 transition duration-200"
+      >
         <Image
           removeWrapper
           alt="Card example background"
-          className="z-0 w-full h-full object-center sm:object-cover"
-          src="alienlight.jpg"
+          className="z-0 w-full h-full object-cover sm:object-cover "
+          src="youarenotalone.svg"
         />
-        {/* <CardFooter className="absolute bg-white/50 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-          <div>
-            <p className="text-white text-tiny">Comming Soon</p>{" "}
-            <p className="text-white text-tiny">Comming Soon</p>
+        <CardFooter className="hidden sm:flex sm:absolute bg-black/60 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+          <div className="flex flex-grow gap-2 items-center">
+            <div className="flex flex-col">
+              <div className="flex justify-between p-2 pb-0 w-[250px]">
+                <h1 className=" text-white font-bold text text-xl ">
+                  {t("youarenotalone")}
+                </h1>
+              </div>
+              <div className="p-2 pt-0">
+                <p className="text-tiny text-white/60 text-left">
+                  {t("youarenotalonedesc")}
+                </p>
+              </div>
+            </div>
           </div>
-          <Button className="text-tiny" color="primary" radius="full" size="sm">
-            Comming Soon
+          <Button
+            className="flex flex-row justify-center items-center mr-10"
+            radius="full"
+            size="sm"
+          >
+            <img src="/react.svg" alt="" width="35px" />
+            <img src="/TypeScript.svg" alt="" width="35px" />
+            <img src="/MaterialUI.svg" alt="" width="35px" />
           </Button>
-        </CardFooter> */}
+        </CardFooter>
       </Card>
       <Card
         isPressable

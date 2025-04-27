@@ -33,7 +33,7 @@ export default function MainCardLight() {
           </GradientText>
         </p>
         <p
-          className={`type-text text-tiny max-w-[40ch] text-m px-5 lg:px-0 lg:text-lg text-center ${
+          className={`type-text text-tiny whitespace-pre-line max-w-[40ch] text-m px-5 lg:px-0 lg:text-lg text-center ${
             theme === true ? "text-white" : "text-white"
           }`}
         >

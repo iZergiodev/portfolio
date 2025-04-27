@@ -1,12 +1,13 @@
 {
   "role": "Desarrollador FrontEnd",
   "flash4devsDescription": "Una nueva forma de aprender",
-  "desc": "Mi nombre es Sergio. Soy un programador web apasionado por crear soluciones digitales innovadoras y funcionales. Disfruto diseñando interfaces intuitivas y optimizando la experiencia del usuario. Mi enfoque combina creatividad con precisión técnica para desarrollar proyectos únicos y eficientes que superen las expectativas",
+  "desc": "Hola, me llamo Sergio. \nMe gusta el Frontend y me lo paso bien haciendo cosas. Aquí a mi derecha te muestro algunos de mis proyectos personales.",
   "mailStatusSuccess": "Correo enviado con éxito",
   "mailStatusError": "Error al enviar el correo",
   "yourName": "Su nombre",
   "yourEmail": "Su email",
   "yourMessage": "Su mensaje",
-  "send": "Enviar"
-
+  "send": "Enviar",
+  "youarenotalone": "You are not alone",
+  "youarenotalonedesc": "Comparte tus emociones"
 }

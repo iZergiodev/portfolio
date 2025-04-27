@@ -1,12 +1,13 @@
 {
   "role": "FrontEnd Developer",
   "flash4devsDescription": "A new way to learn",
-  "desc": "I am a web programmer passionate about creating innovative and functional digital solutions. I enjoy designing intuitive interfaces and optimizing user experience. My approach combines creativity with technical precision to develop unique and efficient projects that exceed expectations",
+  "desc": "Hi, my name is Sergio.\nI enjoy Frontend development and have fun creating things. Here on my right, I show you some of my personal projects.",
   "mailStatusSuccess": "Mail sent successfully",
   "mailStatusError": "Error sending mail",
   "yourName": "Your name",
   "yourEmail": "Your email",
   "yourMessage": "Your message",
-  "send": "Send"
-
+  "send": "Send",
+  "youarenotalone": "You are not alone",
+  "youarenotalonedesc": "Share your emotions"
 }
