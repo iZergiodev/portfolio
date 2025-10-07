@@ -52,17 +52,17 @@ export function Home() {
           disableRotation={false}
           className="absolute inset-0 w-full h-full"
         >
-          <div className="w-full h-full flex sm:flex-row flex-col justify-center items-center gap-6 sm:gap-8 px-4 sm:px-8">
-            <div className="w-full sm:w-[20%] h-auto sm:h-[85vh] flex flex-col gap-3">
+          <div className="w-full h-full flex sm:flex-row flex-col justify-center items-center gap-6 sm:gap-8 px-4 sm:px-8 pt-20 pb-6 sm:py-0">
+            <div className="w-full max-w-md sm:max-w-none sm:w-[20%] sm:h-[85vh] flex flex-col gap-3">
               <div className="flex-shrink-0 flex items-center justify-center">
                 <MainCard />
               </div>
-              <div className="flex-1">
+              <div className="hidden sm:flex sm:flex-1">
                 <IconPlaceholders />
               </div>
             </div>
 
-            <div className="w-full sm:w-[80%] h-auto sm:h-[85vh] flex items-center justify-center">
+            <div className="w-full sm:w-[80%] h-[60vh] sm:h-[85vh] flex items-center justify-center">
               <Gallery />
             </div>
           </div>
