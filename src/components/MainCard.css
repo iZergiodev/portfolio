@@ -1,9 +1,9 @@
-.gradient-border {
+.gradient-border-dark {
   position: relative;
   display: inline-block;
 }
 
-.gradient-border::before {
+.gradient-border-dark::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -17,13 +17,33 @@
   z-index: 0;
 }
 
+.gradient-border-light {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-border-light::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #FF8000, #FF0000, #FFFF00, #FF0000, #FFFF00);
+  background-size: 200% 200%;
+  animation: gradientAnimation 3s ease infinite;
+  z-index: 0;
+}
+
 @keyframes gradientAnimation {
   0% { background-position: 0% 0%; }
   50% { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
 }
 
-.gradient-border img {
+.gradient-border-dark img,
+.gradient-border-light img {
   position: relative;
   z-index: 1;
 }

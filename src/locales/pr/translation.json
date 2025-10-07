@@ -1,6 +1,6 @@
 {
   "role": "Desenvolvedor FrontEnd",
-  "flash4devsDescription": "Uma nova maneira de aprender",
+  "flash4devsDescription": "Plataforma de aprendizagem usando IA",
   "desc": "Olá, meu nome é Sergio.\nGosto de Frontend e me divirto fazendo coisas. Aqui à minha direita, mostro alguns dos meus projetos pessoais.",
   "mailStatusSuccess": "Correio enviado com sucesso",
   "mailStatusError": "Erro no envio de correio eletrónico",
@@ -9,5 +9,7 @@
   "yourMessage": "A sua mensagem",
   "send": "Enviar",
   "youarenotalone": "You are not alone",
-  "youarenotalonedesc": "Partilhe as suas emoções"
+  "youarenotalonedesc": "Aplicativo móvel baseado em mapa interativo para compartilhar emoções",
+  "devtallesTitle": "DevTalles Hackathon",
+  "devtallesDescription": "Blog para o terceiro aniversário do devtalles."
 }
