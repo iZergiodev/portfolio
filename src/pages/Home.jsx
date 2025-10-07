@@ -16,16 +16,14 @@ export function Home() {
     ? {
       // Dark mode (theme = true)
       bgColor: "bg-black",
-      bgImage:
-        "https://img1.akspic.ru/crops/1/1/2/4/6/164211/164211-4_j_den_posle_novoluniya-luna-lunnaya_faza-polumesyac-venera-1920x1080.jpg",
+      bgImage: "/fondo.jpg",
       particleColors: ["#8B00FF", "#00CED1"],
       gradientColors: "from-[#40ffaa] via-[#4079ff] to-[#40ffaa]",
     }
     : {
       // Light mode (theme = false)
       bgColor: "bg-white",
-      bgImage:
-        "https://wallpapers.com/images/hd/galaxy-moon-and-sunset-yflymgf0ggp674jv.jpg",
+      bgImage: "/fondoblanco.jpg",
       particleColors: ["#FF0000", "#FFFF00"],
       gradientColors: "from-[#FF0000] via-[#FF8000] to-[#FFFF00]",
     };
@@ -40,7 +38,7 @@ export function Home() {
       >
         <img
           src={themeConfig.bgImage}
-          alt="Background"
+          alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
         <Particles

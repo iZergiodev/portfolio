@@ -3,10 +3,9 @@ import { useStore } from "../store/store";
 export default function IconPlaceholders() {
   const { theme } = useStore();
 
-  // Theme-specific gradient
-  const gradientColors = theme
-    ? "from-[#40ffaa] via-[#4079ff] to-[#40ffaa]"
-    : "from-[#FF0000] via-[#FF8000] to-[#FFFF00]";
+
+  // Theme-specific background image
+  const backgroundImage = theme ? "/fondonegro.jpg" : "/nubes.jpg";
 
   const socialLinks = [
     {
@@ -34,8 +33,8 @@ export default function IconPlaceholders() {
           className="flex-1 rounded-3xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden border-4 border-gray-600"
         >
           <img
-            src="/fondonegro.jpg"
-            alt="Background"
+            src={backgroundImage}
+            alt=""
             className="absolute inset-0 w-full h-full object-cover"
           />
           <img

@@ -1,7 +1,5 @@
-import { Card, CardHeader, CardBody, Image } from "@heroui/react";
+import { Card, CardFooter, Image } from "@heroui/react";
 import { useTranslation } from "react-i18next";
-import GradientText from "./GradientText";
-import "./MainCard.css";
 import { useStore } from "../store/store";
 
 export default function MainCard() {
@@ -12,42 +10,38 @@ export default function MainCard() {
   const themeConfig = theme
     ? {
         // Dark mode
-        borderClass: "gradient-border-dark",
-        gradientColors: ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"],
+        gradientBorder: "from-[#1e40af] via-[#3b82f6] to-[#60a5fa]",
+        textGradient: "from-[#1e40af] via-[#3b82f6] to-[#60a5fa]",
       }
     : {
         // Light mode
-        borderClass: "gradient-border-light",
-        gradientColors: ["#FF8000", "#FF0000", "#FFFF00", "#FF0000", "#FFFF00"],
+        gradientBorder: "from-[#bfdbfe] via-[#93c5fd] to-[#dbeafe]",
+        textGradient: "from-[#bfdbfe] via-[#93c5fd] to-[#dbeafe]",
       };
 
   return (
-    <Card className="py-3 max-w-[280px]">
-      <CardHeader className="pb-0 pt-2 px-3 flex-col">
-        <div className={themeConfig.borderClass}>
-          <Image
-            alt="Card background"
-            className="object-cover rounded-xl w-full"
-            src="sergio.jpeg"
-            width={260}
+    <Card className="w-full rounded-3xl overflow-hidden border border-gray-700 bg-black/40 backdrop-blur-sm relative group">
+      {/* Profile image */}
+      <div className="relative p-4">
+        <div className="relative w-full aspect-[4/3]">
+          <div className={`absolute -inset-1 bg-gradient-to-r ${themeConfig.gradientBorder} rounded-2xl blur opacity-60 group-hover:opacity-100 transition duration-500 z-0`}></div>
+          <img
+            alt="Sergio Carretero"
+            className="relative object-cover rounded-2xl w-full h-full z-10"
+            src="/sergio.jpeg"
           />
         </div>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2">
-        <p className="text-center uppercase font-bold text-base mb-2">
-          <GradientText
-            colors={themeConfig.gradientColors}
-            animationSpeed={3}
-            showBorder={false}
-            className="custom-class type-text"
-          >
-            {t("role")}
-          </GradientText>
-        </p>
-        <p className="type-text text-tiny max-w-[40ch] whitespace-pre-line text-sm px-4 lg:px-2 text-center text-white">
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col gap-2 p-4 pt-0">
+        <h2 className={`text-lg font-bold bg-gradient-to-r ${themeConfig.textGradient} bg-clip-text text-transparent text-center`}>
+          {t("role")}
+        </h2>
+        <p className="text-white/80 text-xs leading-relaxed text-center">
           {t("desc")}
         </p>
-      </CardBody>
+      </div>
     </Card>
   );
 }

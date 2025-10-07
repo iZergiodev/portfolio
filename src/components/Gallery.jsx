@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardFooter, Image, Button } from "@heroui/react";
+import { Card, CardHeader, CardFooter, Button } from "@heroui/react";
 import { useTranslation } from "react-i18next";
 import { useStore } from "../store/store";
 
@@ -26,8 +26,7 @@ export default function Gallery() {
           isFooterBlurred
           className="col-span-5 sm:col-span-3 row-span-3 rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300 relative border border-gray-700"
         >
-          <Image
-            removeWrapper
+          <img
             alt="DevTalles Hackathon Winner"
             className="z-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             src="/devtalles.png"
@@ -35,25 +34,21 @@ export default function Gallery() {
           <div className="absolute top-4 right-4 bg-yellow-500 text-black font-bold px-4 py-2 rounded-full text-sm z-20 shadow-lg">
             🏆 1st Place - 700€
           </div>
-          <CardFooter className="absolute bg-black/70 backdrop-blur-md bottom-0 z-10 border-t-1 border-white/20 rounded-b-3xl">
-            <div className="flex flex-grow gap-2 items-center">
-              <div className="flex flex-col">
-                <h1 className="text-white font-bold text-lg sm:text-xl mb-1">
+          <CardFooter className="absolute bg-black/80 backdrop-blur-md bottom-0 z-10 border-t-1 border-white/20 rounded-b-3xl p-4">
+            <div className="flex w-full justify-between items-center gap-4">
+              <div className="flex flex-col flex-1">
+                <h1 className="text-white font-bold text-base sm:text-xl mb-1">
                   {t("devtallesTitle")}
                 </h1>
-                <p className="text-xs sm:text-tiny text-white/70">
+                <p className="text-xs sm:text-sm text-white/70">
                   {t("devtallesDescription")}
                 </p>
               </div>
+              <div className="hidden sm:flex gap-2 items-center">
+                <img src="/dotnet.svg" alt=".NET" width="28px" />
+                <img src="/postgresql.svg" alt="PostgreSQL" width="28px" />
+              </div>
             </div>
-            <Button
-              className="hidden sm:flex flex-row justify-center items-center gap-1"
-              radius="full"
-              size="sm"
-            >
-              <img src="/dotnet.svg" alt=".NET" width="30px" />
-              <img src="/postgresql.svg" alt="PostgreSQL" width="30px" />
-            </Button>
           </CardFooter>
         </Card>
 
@@ -64,8 +59,7 @@ export default function Gallery() {
           onPress={() => handlePress("https://yana-front.vercel.app/")}
           className="col-span-5 sm:col-span-2 row-span-3 rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-700"
         >
-          <Image
-            removeWrapper
+          <img
             alt="You Are Not Alone background"
             className="z-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             src="youarenotalone.svg"
@@ -92,8 +86,7 @@ export default function Gallery() {
           isFooterBlurred
           className="col-span-3 sm:col-span-2 row-span-2 rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300 border border-gray-700"
         >
-          <Image
-            removeWrapper
+          <img
             alt="Flash4Devs"
             className="z-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             src={flash4DevsImage}
@@ -121,8 +114,7 @@ export default function Gallery() {
 
         {/* Decorative card - small vertical */}
         <Card className="col-span-2 sm:col-span-1 row-span-1 rounded-3xl overflow-hidden group border border-gray-700">
-          <Image
-            removeWrapper
+          <img
             alt="Card background"
             className="z-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             src={alienImage}
@@ -131,16 +123,14 @@ export default function Gallery() {
 
         {/* Decorative card - horizontal */}
         <Card className="col-span-3 sm:col-span-1 row-span-1 rounded-3xl overflow-hidden group border border-gray-700">
-          <Image
-            removeWrapper
+          <img
             alt="Card background"
             className="z-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             src={alienImage}
           />
         </Card>
         <Card className="col-span-3 sm:col-span-1 row-span-1 rounded-3xl overflow-hidden group border border-gray-700">
-          <Image
-            removeWrapper
+          <img
             alt="Card background"
             className="z-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             src={alienImage}
@@ -154,8 +144,7 @@ export default function Gallery() {
           className="col-span-5 sm:col-span-3 row-span-1 rounded-3xl overflow-hidden group bg-gray-100 hover:shadow-xl transition-all duration-300 relative border border-gray-400"
         >
           <div className="w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Image
-              removeWrapper
+            <img
               alt="Tandem Software"
               className="w-[150%] h-auto object-contain"
               src="/Tandem_Banner.svg"
